@@ -1,0 +1,17 @@
+INSERT INTO `tbl_student` (`student_id`, `pass`, `fname`, `lname`, `cell_number`, `dob`, `school_id`) VALUES ('2006', '1234', 'Chan', 'Gil', '2015283742', '1979-03-24', '5004');
+INSERT INTO `tbl_student` (`student_id`, `pass`, `fname`, `lname`, `cell_number`, `dob`, `school_id`) VALUES ('2007', '1234', 'Biden', 'Joe', '2015283742', '1979-03-24', '5004');
+INSERT INTO `tbl_student` (`student_id`, `pass`, `fname`, `lname`, `cell_number`, `dob`, `school_id`) VALUES ('2008', '1234', 'Talye', 'Sun', '2015283742', '1979-03-24', '5004');
+INSERT INTO `tbl_student` (`student_id`, `pass`, `fname`, `lname`, `cell_number`, `dob`, `school_id`) VALUES ('2009', '1234', 'Tail', 'Jae', '2015283742', '1979-03-24', '5004');
+INSERT INTO `tbl_student` (`student_id`, `pass`, `fname`, `lname`, `cell_number`, `dob`, `school_id`) VALUES ('2010', '1234', 'Suhee', 'Jang', '2015283742', '1979-03-24', '5004');
+INSERT INTO `tbl_student` (`student_id`, `pass`, `fname`, `lname`, `cell_number`, `dob`, `school_id`) VALUES ('2011', '1234', 'Kyuri', 'Lee', '2015283742', '1979-03-24', '5004');
+INSERT INTO `tbl_student` (`student_id`, `pass`, `fname`, `lname`, `cell_number`, `dob`, `school_id`) VALUES ('2012', '1234', 'Sanghee', 'Jo', '2015283742', '1979-03-24', '5004');
+INSERT INTO `tbl_student` (`student_id`, `pass`, `fname`, `lname`, `cell_number`, `dob`, `school_id`) VALUES ('2013', '1234', 'Willy', 'Bore', '2015283742', '1979-03-24', '5004');
+INSERT INTO `tbl_student` (`student_id`, `pass`, `fname`, `lname`, `cell_number`, `dob`, `school_id`) VALUES ('2014', '1234', 'Jone', 'Bore', '2015283742', '1979-03-24', '5004');
+INSERT INTO `tbl_student` (`student_id`, `pass`, `fname`, `lname`, `cell_number`, `dob`, `school_id`) VALUES ('2015', '1234', 'Jane', 'Kim', '2015283742', '1979-03-24', '5004');
+INSERT INTO `tbl_student` (`student_id`, `pass`, `fname`, `lname`, `cell_number`, `dob`, `school_id`) VALUES ('2016', '1234', 'Willy', 'Bore', '2015283742', '1979-03-24', '5004');
+INSERT INTO `tbl_student` (`student_id`, `pass`, `fname`, `lname`, `cell_number`, `dob`, `school_id`) VALUES ('2017', '1234', 'Willy', 'Bore', '2015283742', '1979-03-24', '5004');
+INSERT INTO `tbl_student` (`student_id`, `pass`, `fname`, `lname`, `cell_number`, `dob`, `school_id`) VALUES ('2018', '1234', 'Willy', 'Bore', '2015283742', '1979-03-24', '5004');
+INSERT INTO `tbl_student` (`student_id`, `pass`, `fname`, `lname`, `cell_number`, `dob`, `school_id`) VALUES ('2019', '1234', 'Willy', 'Bore', '2015283742', '1979-03-24', '5004');
+INSERT INTO `tbl_student` (`student_id`, `pass`, `fname`, `lname`, `cell_number`, `dob`, `school_id`) VALUES ('2020', '1234', 'Willy', 'Bore', '2015283742', '1979-03-24', '5004');
+INSERT INTO `tbl_student` (`student_id`, `pass`, `fname`, `lname`, `cell_number`, `dob`, `school_id`) VALUES ('2021', '1234', 'Willy', 'Bore', '2015283742', '1979-03-24', '5004');
+INSERT INTO `tbl_student` (`student_id`, `pass`, `fname`, `lname`, `cell_number`, `dob`, `school_id`) VALUES ('2022', '1234', 'Willy', 'Bore', '2015283742', '1979-03-24', '5004');
