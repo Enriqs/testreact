@@ -6,7 +6,7 @@ function Home({setMsg,msg}){
     const navigate = useNavigate();
     const [sid,setSid] = useState('');
     // sessionStorage.setItem("sid","test session key");
-    // localStorage.setItem("sid","a key");
+    // localStorage.setItem("sid","a key"); session ID
     // document.cookie = "sid=a key; expires=Thu, 12 Jan 2023 23:59:00 PST; path=/";
     // console.log(document.cookie);
     // console.log(sessionStorage.getItem("sid"));

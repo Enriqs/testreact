@@ -1,10 +1,20 @@
 import userSrv from "../Services/userSrv";
 import {useState} from "react";
 import { useNavigate } from "react-router-dom";
+import cryptoJs from "crypto-js";
 
 function Test(){
   const [res,setRes] = useState('');
   const navigate = useNavigate();
+
+  const enc = (data,key) =>{
+    const encData = cryptoJs.AES.encrypt(data,key).toString();
+    return encData;
+  };
+  const dec = (encData,key) =>{
+      const decData = cryptoJs.AES.decrypt(encData,key);
+      return decData.toString(cryptoJs.enc.Utf8);
+  };
   
   const register = (event) => {
     event.preventDefault();
@@ -15,13 +25,14 @@ function Test(){
       setRes(response.data);
       console.log(response);
       if (response.data==123){
-          navigate('/nopage');
+        sessionStorage.setItem("user", enc(formData.get("id"), "Hotdog"));
+        console.log(dec(sessionStorage.getItem("user"), "Hotdog"));
+        navigate('/logged');
       }
     })
     .catch(err=>{
       console.log(err);
     })
-    
     
   }
     return(
