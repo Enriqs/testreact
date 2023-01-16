@@ -27,9 +27,9 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
       // print_r($pass);
       // print_r($row['pass']);
       //if (password_verify($pass,$row['pass'])){ //($password,$hashedPassword)
-        if ($email=='2001'&& $pass=='1234'){
-                      echo "You exist";
-                      header("Location: ".'http://localhost:3000/nopage');
+        if ($email==$row['student_id'] && $pass==$row['pass']){
+                      echo '123';
+                      // header("Location: ".'http://localhost:3000/nopage');
                   }else{
                       echo "You don't exist";
               }
