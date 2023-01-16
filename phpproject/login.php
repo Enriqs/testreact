@@ -4,7 +4,6 @@ header('Access-Control-Allow-Methods:POST');
 header('Access-Control-Allow-Header:Content-Type');
 header('Content-Type:application/json');
 include "./config.php";
-echo '****************************************************************';
 session_start();//session starts here 
 // $dbcon=mysqli_connect("localhost","root","");  
 // mysqli_select_db($dbcon,"crud_homestay");  
