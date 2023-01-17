@@ -9,7 +9,7 @@ session_start();//session starts here
 // mysqli_select_db($dbcon,"crud_homestay");  
   
 if($_SERVER['REQUEST_METHOD']=="POST"){
-  $email = $_POST['id'];
+  $id = $_POST['id'];
   $pass = $_POST['pass'];
   // $type = intval($_POST['type']);
   $dbcon = new mysqli($serverName,$dbUser,$dbpass,$dbName);
@@ -18,16 +18,16 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
   }else{
       
       // $sql = "SELECT fname FROM user_tb WHERE email='Doe@mil.com'";
-      $sql = "SELECT * FROM tbl_student WHERE student_id='".$email."'";
+      $sql = "SELECT * FROM tbl_student WHERE student_id='".$id."'";
       // $sql = "INSERT INTO user_tb (fname,lname,email,pass,type) VALUES ('$fname','$lname','$email','$pass',$type)";
       $result = $dbcon->query($sql);
       if ($result->num_rows > 0) {
       $row = $result->fetch_assoc();
       // output data of each row
-      // print_r($pass);
-      // print_r($row['pass']);
-      //if (password_verify($pass,$row['pass'])){ //($password,$hashedPassword)
-        if ($email==$row['student_id'] && $pass==$row['pass']){
+      //print_r($pass);
+      //print_r($row['pass']);
+      if (password_verify($pass,$row['pass'])){ //($password,$hashedPassword)
+      //if ($id==$row['student_id'] && $pass==$row['pass']){
                       echo '123';
                       // header("Location: ".'http://localhost:3000/nopage');
                   }else{
