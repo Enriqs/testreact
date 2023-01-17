@@ -56,6 +56,15 @@ function RegCompo(){
                 className="form-control" name="pass" placeholder="" required />
               <label htmlFor="pass">Password</label>
             </div>
+            <div className="form-floating mb-3">
+              <select name="role">
+                <option disabled>register as</option>
+                <option value="0">admin</option>
+                <option value="1">owner</option>
+                <option value="2">student</option>
+              </select>
+              <label htmlFor="role"></label>
+            </div>
             <button type="submit" className="btn btn-outline-primary">Register</button>
         </form></div>
         </div>
