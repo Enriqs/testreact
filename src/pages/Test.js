@@ -54,20 +54,25 @@ const [isHover2, setIsHover2] = useState(false);
       setIsHover2(false);
     };
     const stylebtn = {
-        display: "flex",
+        // display: "flex",
         color: isHover ? 'black' : 'white',
         backgroundColor: isHover ? 'lightblue' : 'green',
-        padding: "10px",
+        padding: "0px",
         fontFamily: "Arial",
-        cursor: 'pointer'
+        cursor: 'pointer',
+        width:'15vh',
+        height:'4vh',
+        marginTop:'3.3vh'
     };
     const stylebtn1 = {
-        display: "flex",
+        // display: "flex",
+        width:'15vh',
+        height:'4vh',
         backgroundColor: isHover2 ? 'white' : 'DodgerBlue',
         color: isHover2 ? 'black' : 'white',
-        padding: "10px",
+        padding: "0px",
         fontFamily: "Arial",
-        cursor: 'pointer'
+        cursor: 'pointer',
     };
 //*************STYLE END**************** */
 useEffect(() => {
@@ -87,7 +92,7 @@ useEffect(() => {
       <div className="col-lg-8">
         <div className="card-body py-5 px-md-5" style={{display:'flex'}}>
 
-        <form onSubmit={register} style ={{display:'flex'}}>  
+        <form onSubmit={register} style ={{display:'flex', alignItems:'center'}}>  
      
             <div className="form-outline mb-4">
                 <label className="form-label">User ID  </label>
@@ -103,7 +108,7 @@ useEffect(() => {
             <input style={stylebtn1} className="btn btn-lg btn-success btn-block" type="submit" value="login" name="login" onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseLeave2}/>  
 
           </form>
-          <button style={stylebtn} onClick={() => setCount(2)} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>Register</button>
+          <button style={stylebtn} className="btn btn-lg btn-success btn-block" onClick={() => setCount(2)} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>Register</button>
         </div>
       </div>
     </div>

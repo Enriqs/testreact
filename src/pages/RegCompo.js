@@ -1,7 +1,11 @@
 import userSrv from "../Services/userSrv";
 import {useState} from "react";
+import {useEffect} from "react";
+import { useNavigate } from "react-router-dom";
 function RegCompo(){
   const [res,setRes] = useState('');
+  const [count, setCount] = useState(0);
+  const navigate = useNavigate();
   const register = (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -15,11 +19,36 @@ function RegCompo(){
       console.log(err);
     })
   }
+  useEffect(() => {
+    // Update the document title using the browser API
+    if (count>0){
+        navigate('/');
+    }})
+    //************************ */
+    const [isHover, setIsHover] = useState(false);
+
+    const handleMouseEnter = () => {
+      setIsHover(true);
+    };
+    const handleMouseLeave = () => {
+      setIsHover(false);
+    };
+    const stylebtn = {
+        display: "flex",
+        color: "white",
+        backgroundColor: isHover ? 'lightblue' : 'rgb(0, 191, 255)',
+        padding: "10px",
+        fontFamily: "Arial",
+        cursor: 'pointer'
+    };
+    //***************************** */
     return(
       <div className="row justify-content-center align-items-center g-2">
           <h1>{res}</h1>
             <div className="col-4">
-              <form onSubmit={register}>
+            <button style={stylebtn} onClick={() => setCount(count + 1)} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>Home</button>
+            <br/>
+            <form onSubmit={register}>
             <div className="form-floating mb-3">
               <input
                 type="text"
