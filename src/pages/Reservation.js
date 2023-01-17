@@ -4,8 +4,7 @@ import {useState} from "react";
 import {useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import { Outlet, Link } from "react-router-dom";
-
-function Logged(){
+function Reservation(){
     const [res,setRes] = useState('No Result');
     const [count, setCount] = useState(0);
     const navigate = useNavigate();
@@ -91,7 +90,6 @@ function Logged(){
         fontFamily: "Arial",
     };
     //*********************END STYLE************ */
-        
     return(
         <>
         <button style={stylebtn} onClick={() => setCount(count + 1)} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>Log Out</button>
@@ -114,21 +112,9 @@ function Logged(){
         </nav>
         <Outlet/>
         <section>
-            <table>
-                <thead>
-                    <tr>
-                        <th>hi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>type something</td>
-                    </tr>
-                </tbody>
-            </table>
 
         </section>
         </>
     )
 };
-export default Logged;
+export default Reservation;
