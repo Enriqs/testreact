@@ -48,7 +48,7 @@ function RegCompo(){
             <div className="col-4">
             <button style={stylebtn} onClick={() => setCount(count + 1)} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>Home</button>
             <br/>
-            <form onSubmit={register}>
+        <form onSubmit={register}>
             <div className="form-floating mb-3">
               <input
                 type="text"
