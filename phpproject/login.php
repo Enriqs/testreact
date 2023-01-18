@@ -27,7 +27,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
       //print_r($pass);
       //print_r($row['pass']);
       if (password_verify($pass,$row['pass'])){ //($password,$hashedPassword)
-      //if ($id==$row['student_id'] && $pass==$row['pass']){
+    //   if ($id==$row['student_id'] && $pass==$row['pass']){
                       echo '123';
                       // header("Location: ".'http://localhost:3000/nopage');
                   }else{
