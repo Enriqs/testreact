@@ -5,11 +5,16 @@ import {useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import { Outlet, Link } from "react-router-dom";
 import Calendar from 'react-calendar'; // calendar
-import './App.css'; // css calendar
+//import './App.css'; // css calendar
+import 'react-calendar/dist/Calendar.css';
+
 function Reservation(){
     const [res,setRes] = useState('No Result');
     const [count, setCount] = useState(0);
     const navigate = useNavigate();
+    //const [date, setDate] = useState(new Date()); // Get selected date
+    const [date, setDate] = useState(new Date());
+    // console.log(date);
 
     const dec = (encData,key) =>{
         const decData = cryptoJs.AES.decrypt(encData,key);
@@ -41,10 +46,11 @@ function Reservation(){
     if(sessionStorage.getItem("user") != null){
         const formData = new FormData();
         formData.append("id",dec(sessionStorage.getItem("user"), "Hotdog"));
+        // console.log(formData);
         userSrv.register("checkSession.php", formData)
         .then(response=>{
             setRes(response.data);
-            console.log(res);
+            // console.log(res);
         })
         .catch(err=>{
           console.log(err);
@@ -53,6 +59,37 @@ function Reservation(){
         navigate('/');
     }
     });
+    /**********CALENDAR */
+    /*****To get today data */
+    const today = new Date();
+    let day = today.getDate();
+    let month = today.getMonth();
+    let year = today.getFullYear();
+    /************REGISTER DATE *************/
+    const registerdate = (event) => {
+        event.preventDefault();
+        const formData2 = new FormData(event.target);
+        // const regdate=date;
+        let datea=[date[0].getDate(),(date[0].getMonth()+1),date[0].getFullYear()];
+        let dateb=[date[1].getDate(),(date[1].getMonth()+1),date[1].getFullYear()];
+        // let currentDate=[datea,dateb];
+        // console.log(currentDate);
+        formData2.append("datea",datea);
+        formData2.append("dateb",dateb);
+        formData2.append("uid",dec(sessionStorage.getItem("user"), "Hotdog"));
+        // formData2.append("hid",dec(sessionStorage.getItem("user"), "Hotdog"));
+        userSrv.register("regcalendar.php",formData2)
+         .then(response=>{
+           console.log(response);
+         })
+         .catch(err=>{
+           console.log(err);
+         })
+      }
+
+    /************To get dates to color */
+
+    /************END CALENDAR******** */
     //************************style */
     const [isHover, setIsHover] = useState(false);
 
@@ -105,7 +142,7 @@ function Reservation(){
                         <Link to="/reservation" style={mystyleli}>Reservation</Link>
                     </li>
                     <li>
-                        <Link to="/test" style={mystyleli}>Log in</Link>
+                        <Link to="/test" style={mystyleli}>Students List </Link>
                     </li>
                     <li>
                         <Link to="/register" style={mystyleli}>Register</Link>
@@ -113,9 +150,43 @@ function Reservation(){
                 </ul>
         </nav>
         <Outlet/>
-        <section>
-
+        <section className="row justify-content-center align-items-center g-2">
+            {/* CALENDAR START */}
+        <div className='app ' style={{width:'20%'}}> 
+        <h1 className='text-center'>Available days Calendar</h1>
+      <div className='calendar-container'>
+        <Calendar
+        onChange={setDate}
+        value={date}
+        selectRange={true}
+        // defaultValue={date} 
+        minDate={new Date(year, month, day)}  
+        />
+      </div>
+      {date.length > 0 ? (
+        <p className='text-center'>
+          <span className='bold'>Start:</span>{' '}
+          {date[0].toDateString()}
+          &nbsp;|&nbsp;
+          <span className='bold'>End:</span> {date[1].toDateString()}
+        </p>
+      ) : (
+        <p className='text-center'>
+          <span className='bold'>Default selected date:</span>{' '}
+          {date.toDateString()}
+        </p>
+      )}
+        </div>
         </section>
+        <div>
+        <form onSubmit={registerdate}>
+        <div className="mb-3" style={{width:'20vh'}}>
+              <label className="form-label">House ID</label>
+              <input type="text"className="form-control" name="hid" id="" aria-describedby="helpId" placeholder="#" required/>
+            </div>
+        <button type="submit" className="btn btn-outline-primary" name='arr'>Register Dates</button>
+        </form>
+        </div>
         </>
     )
 };
