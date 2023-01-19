@@ -11,8 +11,6 @@
         $dob = $_POST['dob'];
         $phone = $_POST['phone'];
         $introduction = 'some text';
-        $home_id = 3999;
-        // $sid = intval($_POST['schoolid']);
         $pass = password_hash($_POST['pass'],PASSWORD_DEFAULT);
         $dbcon = new mysqli($serverName,$dbUser,$dbpass,$dbName);
         if($dbcon->connect_error){
@@ -34,11 +32,6 @@
                 default: 
                     echo "illegal value";
             }
-            // if($dbcon->query($sql)===TRUE){
-            //     echo "You have been registered";
-            // }else{
-            //     echo "Error in the registeration: ".$dbcon->error;
-            // }
             $dbcon->close();
         }
     }
