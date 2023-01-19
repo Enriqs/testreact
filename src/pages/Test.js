@@ -2,6 +2,7 @@ import userSrv from "../Services/userSrv";
 import {useState} from "react";
 import cryptoJs from "crypto-js";
 import { useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom'
 
 function Test(){
 const [res,setRes] = useState('');
